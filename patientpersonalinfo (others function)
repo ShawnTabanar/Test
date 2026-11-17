@@ -132,12 +132,43 @@ void patientpersonalinfo()
 
 
     // II. HISTORY OF PRESENT ILLNESS
-
     cout << endl;
     cout << "II. HISTORY OF PRESENT ILLNESS" << endl;
+    cout << "Chief Complaint:" << endl;
+    cout << "1. Fever" << endl;
+    cout << "2. Coughing/Cold" << endl;
+    cout << "3. Pain/Ache" << endl;
+    cout << "4. Dizziness/Fatigue" << endl;
+    cout << "5. Others" << endl;
+    cout << "Enter choice: ";
+    cin >> option;
 
-    cout << "History of Present Illness: ";
-    getline(cin, historyPresentIllness);
+    if (option == 1)
+    {
+        historyPresentIllness = "Fever";
+    }
+    else if (option == 2)
+    {
+        historyPresentIllness = "Coughing/Cold";
+    }
+    else if (option == 3)
+    {
+        historyPresentIllness = "Pain/Ache";
+    }
+    else if (option == 4)
+    {
+        historyPresentIllness = "Dizziness/Fatigue";
+    }
+    else if (option == 5)
+    {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Please specify: ";
+        getline(cin, historyPresentIllness);
+    }
+    else
+    {
+        historyPresentIllness = "Not Specified";
+    }
 
 
     // III. PAST MEDICAL HISTORY
@@ -396,7 +427,7 @@ void patientpersonalinfo()
 
 
         cout << endl;
-        cout << "MENARCHE:" << endl;
+        cout << "MENARCHE (First menstruation):" << endl;
         cout << "1. Before 10 years old" << endl;
         cout << "2. 10-12 years old" << endl;
         cout << "3. 13-15 years old" << endl;
@@ -437,7 +468,7 @@ void patientpersonalinfo()
 
 
         cout << endl;
-        cout << "GRAVIDA:" << endl;
+        cout << "GRAVIDA (Number of pregnancies):" << endl;
         cout << "1. 0" << endl;
         cout << "2. 1" << endl;
         cout << "3. 2" << endl;
@@ -459,7 +490,7 @@ void patientpersonalinfo()
 
 
         cout << endl;
-        cout << "PARA:" << endl;
+        cout << "PARA (Number of living children):" << endl;
         cout << "1. No living children" << endl;
         cout << "2. One living child" << endl;
         cout << "3. Two living children" << endl;
@@ -500,7 +531,7 @@ void patientpersonalinfo()
 
 
         cout << endl;
-        cout << "MENOPAUSE:" << endl;
+        cout << "MENOPAUSE (Permanent cessation of menstruation):" << endl;
         cout << "1. Yes" << endl;
         cout << "2. No" << endl;
         cout << "3. Unknown" << endl;
